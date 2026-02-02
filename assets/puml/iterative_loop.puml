@@ -1,0 +1,23 @@
+@startuml
+!theme plain
+title The Iterative Evaluation Loop
+
+state "Wave 0: Safety Check" as W0
+state "Wave 1: Seed Test (500)" as W1
+state "Wave 2: Niche Test (5k)" as W2
+state "Wave 3: Broad Test (100k+)" as W3
+state "Inventory (Search)" as Inv
+
+[*] --> W0
+W0 --> W1 : Safe
+W0 --> [*] : Copyright/Spam
+
+W1 --> W2 : VVSA > 60%
+W1 --> Inv : Failed
+
+W2 --> W3 : APV > 85%
+W2 --> Inv : Failed (The 5k Plateau)
+
+W3 --> W3 : Metrics Stable (Viral)
+W3 --> Inv : Saturation
+@enduml

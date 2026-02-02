@@ -1,0 +1,30 @@
+@startuml
+!theme plain
+title The Algorithmic Funnel
+
+start
+:Upload;
+:Wave 0: Safety & Hash Check;
+if (Pass?) then (yes)
+  :Wave 1: Seed Data (~500 imps);
+  note right: Calibration Phase
+  
+  if (VVSA > 60%?) then (yes)
+    :Wave 2: Broad Test (~5k imps);
+    note right: Validation Phase
+    
+    if (Retention > 80%?) then (yes)
+      :Wave 3: Viral Expansion;
+      :Uncapped Distribution;
+    else (no)
+      :Plateau (Inventory Archive);
+    endif
+    
+  else (no)
+    :Stop (Kill Candidate);
+  endif
+else (no)
+  :Shadowban / 0 Views;
+endif
+stop
+@enduml

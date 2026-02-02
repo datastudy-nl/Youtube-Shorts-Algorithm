@@ -1,0 +1,23 @@
+@startuml
+!theme plain
+start
+:Channel Created;
+fork
+  :Post Quality Content;
+  :High Metrics;
+  :Trust Score ++;
+fork again
+  :Post Spam/Low Quality;
+  :High Swipe-Away;
+  :Trust Score --;
+end fork
+
+if (Trust Score > Threshold) then (yes)
+  :Unlock Larger Wave 1;
+  :Faster Indexing;
+else (no)
+  :Throttle Reach;
+  :Strict Safety Checks;
+endif
+stop
+@enduml

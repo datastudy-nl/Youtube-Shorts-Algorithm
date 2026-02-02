@@ -1,0 +1,26 @@
+@startuml
+!theme plain
+participant Viewer
+participant "App Client" as Client
+participant "Algo Engine" as Algo
+
+Viewer -> Client : Scrolls Feed
+Client -> Viewer : Auto-plays Short (Frame 0)
+Viewer -> Viewer : Cognitive Assessment (200ms)
+note right: "Is this sensorially pleasing?"
+
+alt Immediate Swipe (Rejection)
+    Viewer -> Client : Swipes Away (<3s)
+    Client -> Algo : Signal: Negative [VVSA Drop]
+    Algo -> Algo : Downgrade Distribution Score
+else Watch > Threshold
+    Viewer -> Client : Watches > 3s
+    Client -> Algo : Signal: Neutral/Positive
+    
+    alt Engagement Event
+        Viewer -> Client : Watch to End / Loop
+        Client -> Algo : Signal: Positive [APV Spike]
+        Algo -> Algo : Upgrade to Next Wave
+    end
+end
+@enduml

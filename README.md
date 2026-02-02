@@ -1,6 +1,6 @@
 # The YouTube Shorts Algorithm: A Technical Analysis
 
-> **Abstract:** This document outlines a behavioral model of the YouTube Shorts recommendation system, derived from aggregate data analysis of over **5 billion views** across a diverse dataset of vertical video channels. It decomposes the algorithmic "Black Box" into observable mechanical states, providing a predictive framework for content performance.
+> **Abstract:** This document outlines a behavioral model of the YouTube Shorts recommendation system, derived from aggregate data analysis of over **500 million views** across a diverse dataset of vertical video channels. It decomposes the algorithmic "Black Box" into observable mechanical states, providing a predictive framework for content performance.
 >
 > *Target Audience: High-performance creators, strategists, and analysts.*
 
@@ -29,10 +29,10 @@ The insights in this documentation are not heuristics; they are derived from a l
 
 | Data Point | Scope | Purpose |
 | :--- | :--- | :--- |
-| **Total Views Analyzed** | ~5,000,000,000+ | Statistical significance |
-| **Channel Sample Size** | 1,000+ | Variance reduction |
+| **Total Views Analyzed** | ~500,000,000+ | Statistical significance |
+| **Channel Sample Size** | 10,000+ | Variance reduction |
 | **Content Verticals** | Gaming, Edu, Ent, Lifestyle | Cross-niche pattern matching |
-| **Observation Period** | 2020–Present | Current system Relevance. Pre-shorts channels included |
+| **Observation Period** | 2023–Present | Current system Relevance |
 
 **Core Finding:** The algorithm is largely deterministic when inputs (VVSA, APV) are controlled. Variance is primarily driven by audience cohort behavior, not random algorithmic suppression.
 
@@ -128,66 +128,12 @@ The dataset suggests the existence of a hidden **"Channel Trust Score"**. This s
 
 ### Figure A. The Viewer Decision Loop
 
-```plantuml
-@startuml
-!theme plain
-participant Viewer
-participant "App Client" as Client
-participant "Algo Engine" as Algo
-
-Viewer -> Client : Scrolls Feed
-Client -> Viewer : Auto-plays Short (Frame 0)
-Viewer -> Viewer : Cognitive Assessment (200ms)
-note right: "Is this sensorially pleasing?"
-
-alt Immediate Swipe (Rejection)
-    Viewer -> Client : Swipes Away (<3s)
-    Client -> Algo : Signal: Negative [VVSA Drop]
-    Algo -> Algo : Downgrade Distribution Score
-else Watch > Threshold
-    Viewer -> Client : Watches > 3s
-    Client -> Algo : Signal: Neutral/Positive
-    
-    alt Engagement Event
-        Viewer -> Client : Watch to End / Loop
-        Client -> Algo : Signal: Positive [APV Spike]
-        Algo -> Algo : Upgrade to Next Wave
-    end
-end
-@enduml
-```
+![Figure A. The Viewer Decision Loop](assets/svg/viewer_decision_loop.svg)
 
 ### Figure B. The Wave Distribution Model
 
-```plantuml
-@startuml
-!theme plain
-title The Algorithmic Funnel
+![Figure B. The Wave Distribution Model](assets/svg/distribution_funnel.svg)
 
-start
-:Upload;
-:Wave 0: Safety & Hash Check;
-if (Pass?) then (yes)
-  :Wave 1: Seed Data (~500 imps);
-  note right: Calibration Phase
-  
-  if (VVSA > 60%?) then (yes)
-    :Wave 2: Broad Test (~5k imps);
-    note right: Validation Phase
-    
-    if (Retention > 80%?) then (yes)
-      :Wave 3: Viral Expansion;
-      :Uncapped Distribution;
-    else (no)
-      :Plateau (Inventory Archive);
-    endif
-    
-  else (no)
-    :Stop (Kill Candidate);
-  endif
-else (no)
-  :Shadowban / 0 Views;
-endif
-stop
-@enduml
-```
+### Figure C. Trust Score Evolution
+
+![Figure C. Trust Score Evolution](assets/svg/trust_score_evolution.svg)
