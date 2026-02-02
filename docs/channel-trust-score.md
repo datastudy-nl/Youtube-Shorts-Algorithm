@@ -6,6 +6,8 @@
 
 ## 1. How "Trust" is Calculated
 
+![Trust Score Evolution](../assets/svg/trust_score_evolution.svg)
+
 The Trust Score behaves like a Credit Rating.
 
 $$

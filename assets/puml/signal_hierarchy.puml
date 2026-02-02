@@ -1,0 +1,18 @@
+@startmindmap
+!theme plain
+title Algorithmic Signal Weighting
+
+* **Feed Distribution Score**
+** Tier 1: Gatekeepers (65%)
+*** VVSA (Viewed vs Swiped)
+*** APV (Avg % Viewed)
+*** Cohort Resonance
+** Tier 2: Velocity Multipliers (25%)
+*** Loop Rate (RVR)
+*** Share Velocity
+*** Session Time Contrib.
+** Tier 3: Validation (10%)
+*** Likes / Comments
+*** Channel Trust Score
+*** Topical Relevance
+@endmindmap

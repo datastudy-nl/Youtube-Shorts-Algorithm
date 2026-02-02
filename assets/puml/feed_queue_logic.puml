@@ -1,0 +1,23 @@
+@startuml
+!theme plain
+title The Feed Queue Logic (Selection Probability)
+
+participant "User Session" as User
+participant "Candidate Generator" as Gen
+participant "Ranking Engine" as Rank
+
+User -> Gen: Request Next Video
+Gen -> Gen: Retrieve 100 Candidates
+note right: Sources: \n1. Subscriptions\n2. Related to History\n3. Viral (General)\n4. Exploration (Random)
+
+Gen -> Rank: Score Candidates
+group Scoring Function
+    Rank -> Rank: Predict VVSA (Swipe Prob)
+    Rank -> Rank: Check Creator Trust
+    Rank -> Rank: Apply Diversity Filter
+end
+
+Rank -> User: Return Top 1 Video
+User -> User: Behavior (Watch/Swipe)
+User -> Rank: Return Reward Signal
+@enduml

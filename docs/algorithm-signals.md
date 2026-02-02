@@ -8,6 +8,8 @@
 
 ## 1. The Hierarchy of Metrics
 
+![Metric Hierarchy Pyramid](../assets/svg/signal_hierarchy.svg)
+
 The algorithm does not weigh all interactions equally. We classify signals into three tiers based on their impact on the **Feed Distribution Coefficient (FDC)**.
 
 ### Tier 1: The Gatekeepers (Distribution Vetos)

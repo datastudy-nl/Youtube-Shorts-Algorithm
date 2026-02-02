@@ -1,0 +1,25 @@
+@startuml
+skinparam activity {
+  BackgroundColor White
+  BorderColor Black
+  ArrowColor Black
+}
+
+start
+:<b>0ms: Auto-play</b>
+(Pure Visuals. No Audio processed yet);
+
+:<b>200ms: Pattern Match</b>
+(User asks: "Is this an Ad? Is this trash?");
+
+:<b>800ms: Audio Threshold</b>
+(User commits mental energy to listen);
+
+:<b>1.5s: The Hook "Puncutation"</b>
+(The core premise/joke is set up);
+
+:<b>3.0s: Retention Lock</b>
+(User enters "Lean-back" viewing mode);
+
+stop
+@enduml

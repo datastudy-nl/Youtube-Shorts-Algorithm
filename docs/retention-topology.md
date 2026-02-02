@@ -6,6 +6,8 @@
 
 ## 1. Frame-Level Analysis (The First 3 Seconds)
 
+![The 3-Second Hook Anatomy](../assets/svg/hook_anatomy.svg)
+
 The distribution of a Short is decided in the `[00:00 - 00:02]` window.
 
 ### The "Swipe Filter" Mechanism
@@ -20,6 +22,8 @@ The algorithm acts as a filter. It detects "Satisfaction" vs "Regret".
 ---
 
 ## 2. Retention Archetypes (Graph Shapes)
+
+![Retention Archetypes](../assets/svg/retention_shapes.svg)
 
 We have identified 4 distinct shapes that appear across millions of videos.
 

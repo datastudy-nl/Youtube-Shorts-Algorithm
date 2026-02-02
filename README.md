@@ -137,3 +137,7 @@ The dataset suggests the existence of a hidden **"Channel Trust Score"**. This s
 ### Figure C. Trust Score Evolution
 
 ![Figure C. Trust Score Evolution](assets/svg/trust_score_evolution.svg)
+
+### Figure D. The Algorithm Feed Logic
+
+![Figure D. The Algorithm Feed Logic](assets/svg/feed_queue_logic.svg)

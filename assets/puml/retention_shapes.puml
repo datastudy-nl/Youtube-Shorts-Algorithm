@@ -1,0 +1,28 @@
+@startuml
+!theme plain
+title Retention Graph Archetypes
+
+package "Failure States" {
+  component "The 'L' Curve" as L {
+    [Drop 0-5s] -> [Flatline]
+    note right: Bad Hook
+  }
+  
+  component "Linear Decay" as Linear {
+    [100%] -> [40%]
+    note right: Boring / Pacing
+  }
+}
+
+package "Success States" {
+  component "Hockey Stick" as Hockey {
+    [Dip] -> [Rise > 100%]
+    note right: High Loop Rate
+  }
+  
+  component "The Step Drop" as Step {
+    [Flat] -> [Vertical Drop 50s]
+    note right: Bad Outro
+  }
+}
+@enduml
