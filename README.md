@@ -38,6 +38,8 @@ The insights in this documentation are not heuristics; they are derived from a l
 
 ### 2. System Architecture: The "Feed Satisfaction" Engine
 
+![Feed Queue Logic](assets/svg/feed_queue_logic.svg)
+
 The Shorts algorithm is unlike the Long-form Search & Discovery system. It operates on a **Linear Feed Queue**.
 
 *   **Constraint:** The user cannot "choose" a video; they can only "reject" the current one.
@@ -65,6 +67,8 @@ Not all metrics are weighted equally. The system prioritizes immediate behaviora
 
 ### 4. The Decision Loop: The 200ms Swipe Logic
 
+![The Viewer Decision Loop](assets/svg/viewer_decision_loop.svg)
+
 The single most determinant factor in a Short's lifecycle is the **Header Frame Retention**.
 
 **[View Retention Graph Analysis >](docs/retention-topology.md)**
@@ -84,6 +88,8 @@ A Short is classified based on its VVSA (Viewed vs. Swiped Away) performance:
 *   **> 70% Viewed:** **Viral Candidates.** Unlocked for Wave 3 distribution.
 
 ### 5. The Wave Function: Infinite Distribution Lifecycle
+
+![The Wave Distribution Model](assets/svg/distribution_funnel.svg)
 
 Shorts are distributed in discrete **Audience Batches** (Waves). This explains the "Step-Ladder" growth pattern often observed in analytics.
 
@@ -109,6 +115,8 @@ Shorts are distributed in discrete **Audience Batches** (Waves). This explains t
 
 ### 6. Channel Authority & Trust Scoring
 
+![Trust Score Evolution](assets/svg/trust_score_evolution.svg)
+
 The dataset suggests the existence of a hidden **"Channel Trust Score"**. This score dampens or amplifies the **Cost of Failure**.
 
 **[View Trust Score Mechanics >](docs/channel-trust-score.md)**
@@ -121,23 +129,3 @@ The dataset suggests the existence of a hidden **"Channel Trust Score"**. This s
     *   Test Batch Size: Large.
 
 **Conclusion:** Virality is a mechanism to purchase **System Trust**.
-
----
-
-## Appendix: Technical Flow Diagrams
-
-### Figure A. The Viewer Decision Loop
-
-![Figure A. The Viewer Decision Loop](assets/svg/viewer_decision_loop.svg)
-
-### Figure B. The Wave Distribution Model
-
-![Figure B. The Wave Distribution Model](assets/svg/distribution_funnel.svg)
-
-### Figure C. Trust Score Evolution
-
-![Figure C. Trust Score Evolution](assets/svg/trust_score_evolution.svg)
-
-### Figure D. The Algorithm Feed Logic
-
-![Figure D. The Algorithm Feed Logic](assets/svg/feed_queue_logic.svg)
