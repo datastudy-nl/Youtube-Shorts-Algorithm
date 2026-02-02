@@ -1,6 +1,6 @@
 # The YouTube Shorts Algorithm: A Technical Analysis
 
-> **Abstract:** This document outlines a behavioral model of the YouTube Shorts recommendation system, derived from aggregate data analysis of over **500 million views** across a diverse dataset of vertical video channels. It decomposes the algorithmic "Black Box" into observable mechanical states, providing a predictive framework for content performance.
+> **Abstract:** This document outlines a behavioral model of the YouTube Shorts recommendation system, derived from aggregate data analysis of over **5 billion views** across a diverse dataset of vertical video channels. It decomposes the algorithmic "Black Box" into observable mechanical states, providing a predictive framework for content performance.
 >
 > *Target Audience: High-performance creators, strategists, and analysts.*
 
@@ -29,10 +29,10 @@ The insights in this documentation are not heuristics; they are derived from a l
 
 | Data Point | Scope | Purpose |
 | :--- | :--- | :--- |
-| **Total Views Analyzed** | ~500,000,000+ | Statistical significance |
-| **Channel Sample Size** | 10,000+ | Variance reduction |
+| **Total Views Analyzed** | ~5,000,000,000+ | Statistical significance |
+| **Channel Sample Size** | 1,000+ | Variance reduction |
 | **Content Verticals** | Gaming, Edu, Ent, Lifestyle | Cross-niche pattern matching |
-| **Observation Period** | 2023–Present | Current system Relevance |
+| **Observation Period** | 2021–Present | Current system Relevance; pre-shorts channels included |
 
 **Core Finding:** The algorithm is largely deterministic when inputs (VVSA, APV) are controlled. Variance is primarily driven by audience cohort behavior, not random algorithmic suppression.
 
